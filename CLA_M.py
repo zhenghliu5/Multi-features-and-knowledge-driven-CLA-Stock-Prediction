@@ -23,7 +23,7 @@ from torch.utils.data import Dataset
 StockList = ['中国人寿', '中国平安', '五粮液', '贵州茅台', '工商银行', '招商银行']
 EStockList = ['China Life Insurance', 'Ping An of China', 'Wuliangye', 'Kweichow Moutai', 'ICBC',
               'China Merchants Bank']
-for ss in range(2, len(StockList)-1):
+for ss in range(len(StockList)):
 
     data = pd.read_csv('./data/' + StockList[ss] + 'technical_indicators.csv', encoding='utf-8-sig')
 
