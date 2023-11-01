@@ -22,7 +22,7 @@ from torch.utils.data import Dataset
 '''
 StockList = ['中国人寿','中国平安','五粮液','贵州茅台','工商银行','招商银行']
 EStockList = ['China Life Insurance', 'Ping An of China', 'Wuliangye', 'Kweichow Moutai', 'ICBC', 'China Merchants Bank']
-for ss in range(2, len(StockList)-2):
+for ss in range(len(StockList)):
 
     data = pd.read_csv('./data/'+StockList[ss]+'technical_indicators.csv', encoding='utf-8-sig')
 
@@ -45,10 +45,10 @@ for ss in range(2, len(StockList)-2):
 
     # 选择合适的特征列
     selected_features1 = ['Amount_x', 'Change', 'High', 'Low', 'Open', 'Vol', 'Close',
-                         # 'news_sentiment', 'comment_sentiment',
-                         # 'r1', 'r3', 'r4',
+                         'news_sentiment', 'comment_sentiment',
+                         'r1', 'r3', 'r4',
                          'MA_7', 'MA_21', 'RSI', 'EMA_12', 'MACD', 'Signal_Line', 'W%R', 'TR','momentum']
-    # 'Ret', 'PE',	'PB', 'PS', 'Turnover', 'ChangeRatio'
+                        # 'Ret', 'PE',	'PB', 'PS', 'Turnover', 'ChangeRatio'
     # selected_features1 = list(data.columns[4:12]) + list(data.columns[14:19])
     # target_column = 'Close'
 
